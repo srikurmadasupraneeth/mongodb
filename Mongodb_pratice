@@ -1,0 +1,33 @@
+mongodb is a document database,it is of keys and values
+it is a nosql database
+we can perform crud operations with it
+c-create
+r-read
+u-update
+d-delete
+
+create-
+showdbs-it will listout all the databases
+use dbname- we can change oe create a newdatabase by using the keyword use
+collection-it is like a folder, to create it
+db.createCollection("posts")-so it creates the collectionnof posts
+there are two ways to insert data-insertOneinsertMany
+db.posts.insertOne({name:"praneeth,age:22})
+it will insert one document
+db.posts,insertMany([{name:"praneeth",age:22},{name:"surya",age:22}])
+it will insert array of documents
+
+read-
+db.posts.find() it will list out all the documents in the posts
+db.posts.findOne() it will list out one document
+db.posts.find({name:"praneeth"}) it will list out the values with the name praneeth
+db.posts.find({},{name:1}) it will give name with objectid
+db.posts.find({},{name:1,_id:0}) it will give only name without objectid
+
+update-to update the documents, there are 2 ways-updateOne,updateMany
+db.posts.updateOne({name:"praneeth"},{$set:{age:23}}) it will update the age of praneeth to 23
+db.posts.updateMany({},{$inc:{age:1}})
+
+delete-there are two types, deleteOne,deleteMany
+db.posts.deleteOne({name:"praneeth"}) it will delete the document with name praneeth
+db.posts.deleteMany({}) it will delete all the documents
